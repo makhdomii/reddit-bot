@@ -1,0 +1,19 @@
+{
+  "name": "topic-telegram-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "cron": "^3.1.7",
+    "dotenv": "^16.4.5",
+    "mongoose": "^8.3.1",
+    "node-telegram-bot-api": "^0.65.1",
+    "snoowrap": "^1.23.0"
+  }
+}
