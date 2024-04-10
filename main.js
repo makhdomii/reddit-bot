@@ -61,10 +61,10 @@ async function handleMessage(chatId, text) {
 
 // Scheduled Task for Reddit Items
 new CronJob(
-  "0 * * * *",
-  async () => {
-    console.log("Fetching Reddit posts...");
-    await getItemsFromReddit();
+  "1 * * * * *", // check in every minutes
+  function () {
+    console.log("You will see this message every second");
+    getItemsFromReddit();
   },
   null,
   true,
@@ -79,6 +79,7 @@ async function getItemsFromReddit() {
       .search({ query: message.message, time: "hour" });
     for (let post of posts) {
       const postUrl = `https://www.reddit.com${post.permalink}`;
+      console.log(post);
       const isNewPost = await isNewPostInTopics(
         message.chatId,
         message.message,
@@ -92,7 +93,7 @@ async function getItemsFromReddit() {
         }).save();
         await telegramBot.sendMessage(
           message.chatId,
-          `New Reddit post about ${message.message}: ${postUrl}`
+          `New Reddit post about ${message.message}: ${post.title} \n${postUrl}`
         );
       }
     }
