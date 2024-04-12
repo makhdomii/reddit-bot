@@ -1,0 +1,19 @@
+require("dotenv").config();
+
+const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
+const MONGO_URL = process.env.MONGO_URL;
+const REDDIT_USER_AGENT = process.env.REDDIT_USER_AGENT;
+const REDDIT_CLIENT_ID = process.env.REDDIT_CLIENT_ID;
+const REDDIT_CLIENT_SECRET = process.env.REDDIT_CLIENT_SECRET;
+const REDDIT_USERNAME = process.env.REDDIT_USERNAME;
+const REDDIT_PASSWORD = process.env.REDDIT_PASSWORD;
+
+module.exports = {
+  TELEGRAM_TOKEN,
+  MONGO_URL,
+  REDDIT_USER_AGENT,
+  REDDIT_CLIENT_ID,
+  REDDIT_CLIENT_SECRET,
+  REDDIT_USERNAME,
+  REDDIT_PASSWORD,
+};
